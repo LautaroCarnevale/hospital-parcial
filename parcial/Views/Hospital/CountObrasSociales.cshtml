@@ -1,0 +1,55 @@
+﻿
+
+@{
+	ViewData["Title"] = "CountObrasSociales";
+}
+
+<h1>Cantidad de pacientes por obra social</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				OSDE
+			</th>
+			<th>
+				APROSS
+			</th>
+			<th>
+				PAMI
+			</th>
+			<th>
+				Otro
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				@if (ViewBag.osdeCount != null)
+				{
+					@ViewBag.osdeCount
+				}
+			</td>
+			<td>
+				@if (ViewBag.aprossCount != null)
+				{
+					@ViewBag.aprossCount
+				}
+			</td>
+				<td>
+				@if (ViewBag.aprossCount != null)
+				{
+					@ViewBag.pamiCount
+				}
+			</td>
+			<td>
+				@if (ViewBag.aprossCount != null)
+				{
+					@ViewBag.otroCount
+				}
+			</td>
+		</tr>
+
+	</tbody>
+</table>

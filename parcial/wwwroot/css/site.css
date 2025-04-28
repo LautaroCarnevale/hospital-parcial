@@ -1,0 +1,44 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.navbar-nav{
+
+}
+
+.nav-item {
+    background-color: orange;
+    border-radius: 5px;
+} 
+
+.nav-item:hover {
+    background-color: rgba(255,165, 0, 0.8)
+}
+
+.tr-list-pacientes:nth-child(even) {
+    background-color: rgba(220, 252, 231, 0.8);
+} 
+
+.nav-link {
+   padding: 4px;
+   margin: 0px 8px;
+}

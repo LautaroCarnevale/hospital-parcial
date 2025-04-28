@@ -1,0 +1,55 @@
+﻿@model parcial.Models.Paciente
+
+@{
+	ViewData["Title"] = "Registrar paciente";
+}
+
+<h1>Registrar un paciente</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="RegistrarPaciente">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Nombre" class="control-label"></label>
+				<input asp-for="Nombre" class="form-control" />
+				<span asp-validation-for="Nombre" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="IdObraSocial" class="control-label">Obra Social</label>
+				<select asp-for="IdObraSocial" class="form-select">
+					<option value="1">OSDE</option>
+					<option value="2">APROSS</option>
+					<option value="3">PAMI</option>
+					<option value="4">OTRO</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label asp-for="Edad" class="control-label"></label>
+				<input asp-for="Edad" class="form-control" />
+				<span asp-validation-for="Edad" class="text-danger"></span>
+
+				@if (ViewBag.Edad != null)
+				{
+					@ViewBag.Edad
+				}
+			</div>
+			<div class="form-group">
+				<label asp-for="Sintomas" class="control-label"></label>
+				<input asp-for="Sintomas" class="form-control" />
+				<span asp-validation-for="Sintomas" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

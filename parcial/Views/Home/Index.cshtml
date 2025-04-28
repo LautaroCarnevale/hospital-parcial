@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center bg-info">
+    <h1 class="display-4">Sistema de Registro de pacientes en un Hospital</h1>
+    <h2>
+       Actualmente contamos con las siguientes funcionalides en la app:
+    </h2>
+    <div class="d-flex justify-content-center">
+        <ul class="w-auto text-start">
+            <li>
+                <a asp-controller="Hospital" asp-action="RegistrarPaciente">Registro de pacientes</a>
+            </li>
+            <li>
+                <a asp-controller="Hospital" asp-action="ListarPacientes">Listado</a>
+            </li>
+            <li>
+                <a asp-controller="Hospital" asp-action="CountObrasSociales">Cuantos pacientes por obra social</a>.
+            </li>
+        </ul>
+    </div>
+   
+</div>

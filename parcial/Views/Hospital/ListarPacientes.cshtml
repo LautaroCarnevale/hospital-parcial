@@ -1,0 +1,59 @@
+﻿@model IEnumerable<parcial.Models.Paciente>
+
+@{
+	ViewData["Title"] = "Listar pacientes";
+}
+
+<h1>Listado de pacientes</h1>
+
+<p>
+	<a asp-action="RegistrarPaciente">Registrar un Paciente nuevo</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nombre)
+			</th>
+			<th>
+				Obra Social
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Edad)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Sintomas)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.Count() == 0)
+		{
+			<tr style="text-align:center">
+				<td colspan="5">
+					No hay pacientes registrados
+				</td>
+			</tr>
+		}
+		else
+		{
+			@foreach (var item in Model)
+			{
+				<tr class="tr-list-pacientes">
+					<td>
+						@Html.DisplayFor(modelItem => item.Nombre)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ObraSocial.Nombre)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Edad)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Sintomas)
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>
